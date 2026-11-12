@@ -347,6 +347,29 @@
             overflow-x: hidden;
             position: relative;
         }
+
+        /* Ghumify Modal Transitions */
+        #ghumify-modal {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+        }
+
+        #ghumify-modal.modal-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        #ghumify-modal .modal-panel {
+            transform: scale(0.96) translateY(16px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        }
+
+        #ghumify-modal.modal-open .modal-panel {
+            transform: scale(1) translateY(0);
+        }
     </style>
 
 <body class="bg-surface text-on-surface font-manrope selection:bg-primary selection:text-on-primary overflow-x-hidden">
@@ -1162,8 +1185,243 @@
                                 CSS</span>
                         </div>
                     </div>
+
+                    <!-- Ghumify Flagship AI Project Card -->
+                    <div class="col-span-2 mt-4 md:mt-12 group cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="openGhumifyModal()">
+                        <div
+                            class="glass-pane rounded-xl md:rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 relative bg-zinc-900/70 p-2.5 md:p-6 transition-all duration-700">
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-center">
+                                <div class="md:col-span-7 relative overflow-hidden rounded-lg md:rounded-2xl border border-white/5 bg-zinc-950">
+                                    <img alt="Ghumify – The AI-Powered Smart Travel Companion by Yug Rojivadiya"
+                                        class="w-full h-auto block rounded-lg md:rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 object-cover"
+                                        src="images/ghumify.png" loading="lazy" />
+                                    <div class="absolute top-2 right-2 md:top-4 md:right-4">
+                                        <span
+                                            class="bg-primary text-on-primary text-[5px] md:text-[10px] font-bold px-2 md:px-3.5 py-1 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                            Flagship &bull; AI Travel
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-5 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-1.5 md:mb-3">
+                                            <img src="images/ghumify_logo.png" alt="Ghumify Logo" class="h-4 md:h-6 w-auto object-contain" />
+                                            <span class="text-[5px] md:text-[9px] px-2 py-0.5 rounded-full border border-white/10 text-zinc-300 uppercase tracking-widest bg-white/5 font-manrope">Smart Travel Companion</span>
+                                        </div>
+                                        <h4 class="font-notoSerif text-base md:text-3xl lg:text-4xl text-white italic mb-1 md:mb-2">Ghumify</h4>
+                                        <p class="font-manrope text-[7px] md:text-xs text-zinc-300 font-medium mb-1 md:mb-2">
+                                            AI-Powered Time-Bound Travel Planner
+                                        </p>
+                                        <p class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
+                                            Ghumify is an AI-powered travel companion that creates personalized, time-bound travel itineraries based on a user's destination, available time, budget, age, interests and preferences. Unlike traditional travel planners, it adapts to real-world conditions and provides offline planning, multilingual assistance, crowd prediction, smart routing and emergency support.
+                                        </p>
+                                        <div class="flex flex-wrap gap-1.5 md:gap-2 mb-2 md:mb-6">
+                                            <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Flutter</span>
+                                            <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Dart</span>
+                                            <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Next.js 15</span>
+                                            <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">TypeScript</span>
+                                            <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Gemini AI</span>
+                                            <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Groq Llama</span>
+                                            <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Firebase</span>
+                                            <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">OpenStreetMap</span>
+                                            <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">SQLite Caching</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" onclick="openGhumifyModal(); event.stopPropagation();"
+                                        class="inline-flex items-center gap-1.5 md:gap-2 text-[6px] md:text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white transition group-hover:text-white mt-1">
+                                        Explore Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Dedicated Hackathons & Competitions Section -->
+        <section class="py-16 md:py-32 px-4 md:px-6 bg-surface-container-lowest/30 border-t border-white/5 relative" id="hackathons">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-8 md:mb-16 flex items-center gap-4" data-aos="fade-right">
+                    <h2 class="font-notoSerif text-2xl md:text-5xl italic text-white mb-0">Hackathons &amp; Competitions</h2>
+                    <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
+                    
+                    <!-- 1. Smart India Hackathon (SIH) – Winner -->
+                    <div class="glass-pane rounded-2xl md:rounded-3xl p-4 md:p-6 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-700 bg-zinc-900/60 flex flex-col justify-between group"
+                        data-aos="fade-up" data-aos-delay="100"
+                        style="background: linear-gradient(135deg, rgba(234,179,8,0.04) 0%, rgba(25,25,25,0.5) 40%, rgba(25,25,25,0.6) 100%);">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3 md:mb-4">
+                                <span class="bg-yellow-400/10 text-yellow-300 border border-yellow-400/25 text-[8px] md:text-xs font-bold uppercase tracking-widest px-2.5 md:px-3 py-1 rounded-full flex items-center gap-1.5 shadow-lg">
+                                    <i class="fa-solid fa-trophy text-yellow-400 text-[10px] md:text-xs"></i> Winner &bull; SIH 2026
+                                </span>
+                                <span class="text-[8px] md:text-xs text-zinc-400 uppercase tracking-widest font-manrope">
+                                    National
+                                </span>
+                            </div>
+
+                            <div class="overflow-hidden rounded-xl md:rounded-2xl mb-4 border border-white/10 bg-black/50 relative">
+                                <img src="images/SIH2026.jpeg" alt="Smart India Hackathon 2026 Winner - Yug Rojivadiya"
+                                    class="w-full h-44 sm:h-52 md:h-56 object-cover object-center opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 block"
+                                    loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+                                <div class="absolute bottom-2.5 left-3 md:bottom-3 md:left-4">
+                                    <span class="text-[9px] md:text-xs text-zinc-200 font-medium flex items-center gap-1.5">
+                                        <i class="fa-solid fa-building-columns text-yellow-400"></i> Ministry of Education &bull; SIH
+                                    </span>
+                                </div>
+                            </div>
+
+                            <h3 class="font-notoSerif text-lg md:text-2xl text-white italic mb-1.5">Smart India Hackathon (SIH)</h3>
+                            <p class="font-manrope text-[11px] md:text-xs text-zinc-300 font-light mb-4 leading-relaxed">
+                                Won the Internal Round of Smart India Hackathon (SIH) 2026, competing against 150+ talented teams across the university to represent the college at the Grand Finale with an innovative software solution.
+                            </p>
+
+                            <!-- Prominent Statistics Grid -->
+                            <div class="grid grid-cols-2 gap-2 mb-4">
+                                <div class="p-2.5 rounded-xl border border-yellow-500/20 bg-yellow-400/[0.04]">
+                                    <div class="text-sm md:text-xl font-bold text-yellow-300 font-manrope">Winner</div>
+                                    <div class="text-[8px] md:text-[10px] text-zinc-400 uppercase tracking-wider mt-0.5">Internal Round</div>
+                                </div>
+                                <div class="p-2.5 rounded-xl border border-white/10 bg-white/[0.03]">
+                                    <div class="text-sm md:text-xl font-bold text-white font-manrope">150+</div>
+                                    <div class="text-[8px] md:text-[10px] text-zinc-400 uppercase tracking-wider mt-0.5">Teams Defeated</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-2 text-[9px] md:text-xs">
+                                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-400">P P Savani University</span>
+                                <a href="https://drive.google.com/drive/folders/1VGbdkfLk9W22SSYEtJS8HZAFWRFObDd6?usp=sharing" target="_blank"
+                                    class="inline-flex items-center gap-1 text-yellow-300 hover:text-white transition-colors font-semibold">
+                                    Prototype <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. ZINOVATIO Hackathon – 36th Position -->
+                    <div class="glass-pane rounded-2xl md:rounded-3xl p-4 md:p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-700 bg-zinc-900/60 flex flex-col justify-between group"
+                        data-aos="fade-up" data-aos-delay="200"
+                        style="background: linear-gradient(135deg, rgba(16,185,129,0.04) 0%, rgba(25,25,25,0.5) 40%, rgba(25,25,25,0.6) 100%);">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3 md:mb-4">
+                                <span class="bg-emerald-400/10 text-emerald-300 border border-emerald-400/25 text-[8px] md:text-xs font-bold uppercase tracking-widest px-2.5 md:px-3 py-1 rounded-full flex items-center gap-1.5 shadow-lg">
+                                    <i class="fa-solid fa-medal text-emerald-400 text-[10px] md:text-xs"></i> 36th Position Secured
+                                </span>
+                                <span class="text-[8px] md:text-xs text-zinc-400 uppercase tracking-widest font-manrope">
+                                    All India
+                                </span>
+                            </div>
+
+                            <div class="overflow-hidden rounded-xl md:rounded-2xl mb-4 border border-white/10 bg-black/50 relative">
+                                <img src="images/zinovatio_banner.png" alt="ZINOVATIO Hackathon Selection - Yug Rojivadiya"
+                                    class="w-full h-44 sm:h-52 md:h-56 object-cover object-top opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 block"
+                                    loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+                                <div class="absolute bottom-2.5 left-3 md:bottom-3 md:left-4">
+                                    <span class="text-[9px] md:text-xs text-zinc-200 font-medium flex items-center gap-1.5">
+                                        <i class="fa-solid fa-location-dot text-emerald-400"></i> Chandigarh University
+                                    </span>
+                                </div>
+                            </div>
+
+                            <h3 class="font-notoSerif text-lg md:text-2xl text-white italic mb-1.5">ZINOVATIO Hackathon</h3>
+                            <p class="font-manrope text-[11px] md:text-xs text-zinc-300 font-light mb-4 leading-relaxed">
+                                Selected among 220 teams invited to the offline round of ZINOVATIO Hackathon at Chandigarh University, from 961 registered teams across India. Secured 36th position in the competition.
+                            </p>
+
+                            <!-- Prominent Statistics Grid -->
+                            <div class="grid grid-cols-3 gap-1.5 md:gap-2 mb-4">
+                                <div class="p-2 rounded-xl border border-white/10 bg-white/[0.03] text-center">
+                                    <div class="text-sm md:text-lg font-bold text-white font-manrope">961</div>
+                                    <div class="text-[7px] md:text-[9px] text-zinc-400 uppercase tracking-wider mt-0.5">Registered</div>
+                                </div>
+                                <div class="p-2 rounded-xl border border-white/10 bg-white/[0.03] text-center">
+                                    <div class="text-sm md:text-lg font-bold text-zinc-200 font-manrope">220</div>
+                                    <div class="text-[7px] md:text-[9px] text-zinc-400 uppercase tracking-wider mt-0.5">Offline Teams</div>
+                                </div>
+                                <div class="p-2 rounded-xl border border-emerald-500/20 bg-emerald-400/[0.04] text-center">
+                                    <div class="text-sm md:text-lg font-bold text-emerald-300 font-manrope">36th</div>
+                                    <div class="text-[7px] md:text-[9px] text-emerald-400/80 uppercase tracking-wider mt-0.5">Position</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="pt-3 border-t border-white/10 flex flex-wrap items-center gap-1.5 text-[9px] md:text-xs text-zinc-400">
+                                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5">Chandigarh University</span>
+                                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5">Pan-India Offline Round</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. INDUX 5.0 – National-Level Hackathon (Consecutive Editions) -->
+                    <div class="glass-pane rounded-2xl md:rounded-3xl p-4 md:p-6 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-700 bg-zinc-900/60 flex flex-col justify-between group md:col-span-2 lg:col-span-1"
+                        data-aos="fade-up" data-aos-delay="300"
+                        style="background: linear-gradient(135deg, rgba(245,158,11,0.04) 0%, rgba(25,25,25,0.5) 40%, rgba(25,25,25,0.6) 100%);">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3 md:mb-4">
+                                <span class="bg-amber-400/10 text-amber-300 border border-amber-400/25 text-[8px] md:text-xs font-bold uppercase tracking-widest px-2.5 md:px-3 py-1 rounded-full flex items-center gap-1.5 shadow-lg">
+                                    <i class="fa-solid fa-award text-amber-400 text-[10px] md:text-xs"></i> 2&times; National Milestones
+                                </span>
+                                <span class="text-[8px] md:text-xs text-zinc-400 uppercase tracking-widest font-manrope">
+                                    2025 &bull; 2026
+                                </span>
+                            </div>
+
+                            <div class="overflow-hidden rounded-xl md:rounded-2xl mb-4 border border-white/10 bg-black/50 relative">
+                                <img src="images/indux5.0 hackathon1.jpg" alt="INDUX 5.0 National Hackathon - Yug Rojivadiya"
+                                    class="w-full h-44 sm:h-52 md:h-56 object-cover object-center opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 block"
+                                    loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+                                <div class="absolute bottom-2.5 left-3 md:bottom-3 md:left-4">
+                                    <span class="text-[9px] md:text-xs text-zinc-200 font-medium flex items-center gap-1.5">
+                                        <i class="fa-solid fa-location-dot text-rose-400"></i> Vikrant University, Gwalior
+                                    </span>
+                                </div>
+                            </div>
+
+                            <h3 class="font-notoSerif text-lg md:text-2xl text-white italic mb-1.5">INDUX 5.0 – National Hackathon</h3>
+                            <p class="font-manrope text-[11px] md:text-xs text-zinc-300 font-light mb-4 leading-relaxed">
+                                Participated in INDUX 5.0 for two consecutive editions. Secured a Top 10 position in 2025 and returned in 2026, earning finalist selection and an invitation to the offline round among 300+ registered teams.
+                            </p>
+
+                            <!-- Two Separate Year-Wise Milestones -->
+                            <div class="grid grid-cols-2 gap-2 mb-4">
+                                <div class="p-2.5 rounded-xl border border-red-500/20 bg-red-400/[0.04]">
+                                    <div class="text-[9px] md:text-[10px] font-bold text-red-300 uppercase tracking-widest flex items-center gap-1">
+                                        <i class="fa-solid fa-star text-[8px]"></i> 2025 Edition
+                                    </div>
+                                    <div class="text-sm md:text-lg font-bold text-white font-manrope mt-1">Top 10</div>
+                                    <div class="text-[8px] md:text-[10px] text-zinc-400 uppercase tracking-wider mt-0.5">National Rank</div>
+                                </div>
+                                <div class="p-2.5 rounded-xl border border-amber-500/20 bg-amber-400/[0.04]">
+                                    <div class="text-[9px] md:text-[10px] font-bold text-amber-300 uppercase tracking-widest flex items-center gap-1">
+                                        <i class="fa-solid fa-flag text-[8px]"></i> 2026 Edition
+                                    </div>
+                                    <div class="text-sm md:text-lg font-bold text-amber-300 font-manrope mt-1">Finalist</div>
+                                    <div class="text-[8px] md:text-[10px] text-zinc-400 uppercase tracking-wider mt-0.5">300+ Teams &bull; Offline Round</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="pt-3 border-t border-white/10 flex flex-wrap items-center gap-1.5 text-[9px] md:text-xs text-zinc-400">
+                                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5">2025: Top 10</span>
+                                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5">2026: Finalist</span>
+                                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5">Vikrant University, Gwalior</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
@@ -1232,6 +1490,444 @@
             </div>
         </footer>
 
+        <!-- Ghumify Project Detail Modal -->
+        <div id="ghumify-modal" role="dialog" aria-modal="true" aria-labelledby="ghumify-modal-title"
+            class="fixed inset-0 z-[100] flex items-center justify-center p-3 md:p-6 bg-black/85 backdrop-blur-md overflow-hidden"
+            onclick="if(event.target === this) closeGhumifyModal();">
+            
+            <div class="modal-panel relative w-full max-w-5xl max-h-[92vh] bg-[#0d0d0e] border border-white/15 rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+                
+                <!-- Modal Header -->
+                <div class="flex items-center justify-between px-4 md:px-8 py-3.5 md:py-5 border-b border-white/10 bg-zinc-900/60 backdrop-blur-xl">
+                    <div class="flex items-center gap-3">
+                        <img src="images/ghumify_logo.png" alt="Ghumify" class="h-6 md:h-8 w-auto object-contain" />
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 id="ghumify-modal-title" class="font-notoSerif text-sm md:text-2xl text-white italic">Ghumify</h3>
+                                <span class="text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-widest">
+                                    Smart Travel Companion
+                                </span>
+                            </div>
+                            <p class="font-manrope text-[8px] md:text-xs text-zinc-400">AI-Powered Time-Bound Travel Planner</p>
+                        </div>
+                    </div>
+                    <button type="button" onclick="closeGhumifyModal()" aria-label="Close modal"
+                        class="w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-zinc-300 hover:text-white flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-xmark text-sm md:text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Modal Body (Scrollable) -->
+                <div class="overflow-y-auto px-4 md:px-8 py-5 md:py-8 space-y-6 md:space-y-10 custom-scrollbar text-zinc-300 font-manrope">
+                    
+                    <!-- Hero Banner & Overview -->
+                    <div class="glass-pane rounded-xl md:rounded-2xl p-3 md:p-6 border border-white/10 bg-zinc-900/40">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-center">
+                            <div class="md:col-span-6 rounded-lg md:rounded-xl overflow-hidden border border-white/10 shadow-lg bg-black">
+                                <img src="images/ghumify.png" alt="Ghumify Presentation Banner" class="w-full h-auto object-cover" />
+                            </div>
+                            <div class="md:col-span-6 space-y-3">
+                                <div class="flex flex-wrap gap-2 items-center">
+                                    <span class="bg-primary text-on-primary text-[8px] md:text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest">
+                                        Track: Smart &amp; Sustainable Cities
+                                    </span>
+                                    <span class="text-[8px] md:text-[10px] px-2.5 py-1 rounded-full border border-white/10 text-zinc-400 bg-white/5">
+                                        Team AI Avengers
+                                    </span>
+                                </div>
+                                <h4 class="font-notoSerif text-base md:text-2xl text-white italic">
+                                    &ldquo;One Trip. One Smart Itinerary. One Platform.&rdquo;
+                                </h4>
+                                <p class="text-xs md:text-sm text-zinc-300 font-light leading-relaxed">
+                                    Ghumify is an AI-powered travel companion that creates personalized, time-bound travel itineraries based on a user's destination, available time, budget, age, interests and preferences. Unlike traditional travel planners, it adapts to real-world conditions and provides offline planning, multilingual assistance, crowd prediction, smart routing and emergency support.
+                                </p>
+                                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-white/10 text-[10px] md:text-xs text-zinc-400">
+                                    <div><i class="fa-solid fa-bolt text-amber-400 mr-1.5"></i> <strong>&lt; 3 Sec</strong> AI Generation</div>
+                                    <div><i class="fa-solid fa-wifi text-emerald-400 mr-1.5"></i> <strong>Offline Ready</strong> (509k+ BharatPOI)</div>
+                                    <div><i class="fa-solid fa-language text-sky-400 mr-1.5"></i> <strong>10 Indian Languages</strong></div>
+                                    <div><i class="fa-solid fa-shield-halved text-rose-400 mr-1.5"></i> <strong>OSM Emergency SOS</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem Statement & The "Ground Reality" Gap -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-7 h-7 md:w-9 md:h-9 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center text-xs md:text-sm">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-notoSerif text-base md:text-2xl text-white italic">The Problem &amp; Why It Matters</h4>
+                                <p class="text-[10px] md:text-xs text-zinc-400">The gap between planning at home and surviving on the ground</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                            <div class="glass-pane rounded-xl p-3 md:p-5 border border-white/10 bg-zinc-900/30">
+                                <div class="text-xs md:text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-layer-group text-zinc-400"></i> The Fragmentation
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    A traveler typically juggles 5+ disconnected apps: one for planning, one for translation, one for maps, one for emergencies, and one for train or bus bookings.
+                                </p>
+                            </div>
+                            <div class="glass-pane rounded-xl p-3 md:p-5 border border-white/10 bg-zinc-900/30">
+                                <div class="text-xs md:text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-compass text-zinc-400"></i> The Ground Reality Gap
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Travelers spend hours planning at home, but get stranded on the ground. Generic planners fail because they do not handle real-world chaos: language barriers, medical emergencies, or schedule disruptions.
+                                </p>
+                            </div>
+                            <div class="glass-pane rounded-xl p-3 md:p-5 border border-white/10 bg-zinc-900/30">
+                                <div class="text-xs md:text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-map-location-dot text-zinc-400"></i> The India Factor
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    22 official languages, unpredictable weather, and unorganized local markets make standard Western AI planners unreliable for Tier-2 and Tier-3 Indian destinations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proposed Solution -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-7 h-7 md:w-9 md:h-9 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs md:text-sm">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-notoSerif text-base md:text-2xl text-white italic">The Proposed Solution</h4>
+                                <p class="text-[10px] md:text-xs text-zinc-400">All-in-one, resilient, India-first smart travel companion</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                            <div class="glass-pane rounded-xl p-3 md:p-5 border border-white/10 bg-zinc-900/30">
+                                <div class="text-xs md:text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-mobile-screen-button text-emerald-400"></i> All-in-One India Companion
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    A single unified platform that not only generates slot-by-slot AI itineraries but stays actively with the user on the ground through every leg of the journey.
+                                </p>
+                            </div>
+                            <div class="glass-pane rounded-xl p-3 md:p-5 border border-white/10 bg-zinc-900/30">
+                                <div class="text-xs md:text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-route text-emerald-400"></i> Multi-City Routing
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Automatically plans inter-connected trips across neighboring cities (e.g., Indore &rarr; Ujjain &rarr; Omkareshwar) with integrated train/bus timings and transit route optimization.
+                                </p>
+                            </div>
+                            <div class="glass-pane rounded-xl p-3 md:p-5 border border-white/10 bg-zinc-900/30">
+                                <div class="text-xs md:text-sm font-bold text-white mb-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-shield-virus text-emerald-400"></i> Unfair Resilience Advantage
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Multi-provider AI fallback (Gemini &rarr; Groq Llama &rarr; OpenRouter) combined with an Offline Rule-Based Engine and 509K+ BharatPOI dataset so itineraries generate even with zero network.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10 Key Features Highlighted -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-7 h-7 md:w-9 md:h-9 rounded-full bg-primary/10 border border-white/20 text-white flex items-center justify-center text-xs md:text-sm">
+                                <i class="fa-solid fa-cubes-stacked"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-notoSerif text-base md:text-2xl text-white italic">Key Features</h4>
+                                <p class="text-[10px] md:text-xs text-zinc-400">Core intelligent capabilities powering Ghumify</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-4">
+                            <!-- 1 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">AI-Powered Personalized Planning</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Generates customized, slot-by-slot travel itineraries tailored to destination, available hours, party age group, pacing, and interest categories.
+                                </p>
+                            </div>
+                            <!-- 2 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-signs-post"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">Smart Route Optimization</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Uses Haversine proximity calculations and Nearest-Neighbor logic to plan efficient, loop-free routes and anchored lunch/dinner schedules.
+                                </p>
+                            </div>
+                            <!-- 3 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-users"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">Crowd Intelligence</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Machine learning predicts peak crowd congestion windows at attractions and dynamically suggests calmer alternatives and off-peak visiting slots.
+                                </p>
+                            </div>
+                            <!-- 4 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-wallet"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">Budget Intelligence</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Accurately estimates overall trip expenses and includes integer-paise math expense settlement algorithms to eliminate group debt rounding errors.
+                                </p>
+                            </div>
+                            <!-- 5 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-language"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">Multilingual Translator</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Built-in two-way translation NLP supporting 10 major Indian languages (Hindi, Gujarati, Marathi, Tamil, Telugu, Bengali, Kannada, Malayalam, Punjabi, Odia).
+                                </p>
+                            </div>
+                            <!-- 6 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-plane-slash"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">Offline Travel Planning</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Offline deterministic rule-based engine coupled with a bundled 509K+ BharatPOI dataset and SQLite local storage to generate itineraries without internet.
+                                </p>
+                            </div>
+                            <!-- 7 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-city"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">Multi-City Travel</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Seamless interconnected routing across neighboring Indian cities with synchronized inter-city train and bus options and realistic adult/child fares.
+                                </p>
+                            </div>
+                            <!-- 8 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-truck-medical"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">Emergency Assistance (SOS)</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    1-touch SOS emergency dialing (112, 100, 108) and real-time OpenStreetMap Overpass discovery of nearby hospitals, pharmacies, police stations, and verified restrooms.
+                                </p>
+                            </div>
+                            <!-- 9 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-arrows-rotate"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">Real-Time Adaptation</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Automatically recalibrates schedules in response to weather shifts, unexpected venue closures, or in-flight user modifications through conversational AI.
+                                </p>
+                            </div>
+                            <!-- 10 -->
+                            <div class="p-3 md:p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <span class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-bowl-rice"></i></span>
+                                    <span class="text-xs md:text-sm font-bold text-white">Dietary &amp; Accessibility Support</span>
+                                </div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 font-light leading-relaxed">
+                                    Strict Vegetarian &amp; Jain dietary safety locks, automatic removal of nightlife spots for families with kids, and wheelchair/elderly accessibility checks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Architecture -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-7 h-7 md:w-9 md:h-9 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-xs md:text-sm">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-notoSerif text-base md:text-2xl text-white italic">Technical Architecture</h4>
+                                <p class="text-[10px] md:text-xs text-zinc-400">Ghumify Tourist Journey Flow &amp; Fault-Tolerant System Design</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-pane rounded-xl md:rounded-2xl p-3 md:p-6 border border-white/10 bg-zinc-900/30 space-y-4">
+                            <div class="rounded-lg md:rounded-xl overflow-hidden border border-white/10 bg-black/60">
+                                <img src="images/ghumify_architecture.png" alt="Ghumify Technical Approach and Tourist Journey Flow" class="w-full h-auto block" />
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 pt-2">
+                                <div class="p-3 rounded-lg border border-white/5 bg-white/[0.02]">
+                                    <div class="text-[10px] md:text-xs font-bold text-white mb-1"><i class="fa-solid fa-shield-check text-emerald-400 mr-1"></i> Multi-AI Router</div>
+                                    <p class="text-[10px] md:text-[11px] text-zinc-400">Autonomous fallback: Google Gemini &rarr; Groq Llama 3.3 &rarr; OpenRouter Claude.</p>
+                                </div>
+                                <div class="p-3 rounded-lg border border-white/5 bg-white/[0.02]">
+                                    <div class="text-[10px] md:text-xs font-bold text-white mb-1"><i class="fa-solid fa-code-commit text-sky-400 mr-1"></i> Strict Zod Validation</div>
+                                    <p class="text-[10px] md:text-[11px] text-zinc-400">Ensures zero hallucinated JSON structures or corrupt timeline slots.</p>
+                                </div>
+                                <div class="p-3 rounded-lg border border-white/5 bg-white/[0.02]">
+                                    <div class="text-[10px] md:text-xs font-bold text-white mb-1"><i class="fa-solid fa-database text-amber-400 mr-1"></i> SQLite Caching</div>
+                                    <p class="text-[10px] md:text-[11px] text-zinc-400">Keeps full itinerary slots and maps accessible even in complete dead zones.</p>
+                                </div>
+                                <div class="p-3 rounded-lg border border-white/5 bg-white/[0.02]">
+                                    <div class="text-[10px] md:text-xs font-bold text-white mb-1"><i class="fa-solid fa-map text-rose-400 mr-1"></i> Multi-Provider Maps</div>
+                                    <p class="text-[10px] md:text-[11px] text-zinc-400">Falls back seamlessly from Google Places to Geoapify and OpenStreetMap.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technology Stack Matrix -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-7 h-7 md:w-9 md:h-9 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xs md:text-sm">
+                                <i class="fa-solid fa-microchip"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-notoSerif text-base md:text-2xl text-white italic">Technology Stack</h4>
+                                <p class="text-[10px] md:text-xs text-zinc-400">Production technologies verified from presentation</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                            <div class="p-3.5 md:p-4 rounded-xl border border-white/10 bg-zinc-900/40">
+                                <div class="text-xs md:text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-mobile-screen text-indigo-400"></i> Frontend
+                                </div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Flutter</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Dart</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Riverpod</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">SharedPreferences</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">SQLite</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 md:p-4 rounded-xl border border-white/10 bg-zinc-900/40">
+                                <div class="text-xs md:text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-server text-cyan-400"></i> Backend &amp; Validation
+                                </div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Next.js 15</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">TypeScript</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Node.js</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Zod Validation</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 md:p-4 rounded-xl border border-white/10 bg-zinc-900/40">
+                                <div class="text-xs md:text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-database text-amber-400"></i> Database &amp; Auth
+                                </div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Firebase Auth</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Cloud Firestore</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Firebase Admin SDK</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 md:p-4 rounded-xl border border-white/10 bg-zinc-900/40">
+                                <div class="text-xs md:text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-brain text-purple-400"></i> AI Engines
+                                </div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Google Gemini</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Groq Llama</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">OpenRouter</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Claude</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 md:p-4 rounded-xl border border-white/10 bg-zinc-900/40">
+                                <div class="text-xs md:text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-map-location text-emerald-400"></i> Maps &amp; Geolocation
+                                </div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Google Places</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Geoapify</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">OpenStreetMap Overpass</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 md:p-4 rounded-xl border border-white/10 bg-zinc-900/40">
+                                <div class="text-xs md:text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-hard-drive text-rose-400"></i> Offline Architecture
+                                </div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">SQLite Caching</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">509K+ BharatPOI Dataset</span>
+                                    <span class="text-[10px] md:text-xs px-2 py-0.5 rounded border border-white/10 bg-white/5 text-zinc-300">Deterministic Engine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Real-World Impact & Validation -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-7 h-7 md:w-9 md:h-9 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs md:text-sm">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-notoSerif text-base md:text-2xl text-white italic">Real-World Impact &amp; Market Value</h4>
+                                <p class="text-[10px] md:text-xs text-zinc-400">On-ground traveler safety, algorithmic rigor, and market feasibility</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="rounded-xl overflow-hidden border border-white/10 bg-black/40">
+                                <img src="images/ghumify_advantage.png" alt="Ghumify Advantage - Real World Impact" class="w-full h-auto block" />
+                            </div>
+                            <div class="rounded-xl overflow-hidden border border-white/10 bg-black/40">
+                                <img src="images/ghumify_validation.png" alt="Validation &amp; Technical Feasibility" class="w-full h-auto block" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-3">
+                            <div class="p-3.5 rounded-xl border border-white/10 bg-zinc-900/30">
+                                <div class="text-xs md:text-sm font-bold text-white mb-1"><i class="fa-solid fa-leaf text-emerald-400 mr-1.5"></i> Social Impact</div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 leading-relaxed font-light">
+                                    Promotes sustainable tourism by diverting excessive crowds toward authentic local hidden gems and cultural heritage sites.
+                                </p>
+                            </div>
+                            <div class="p-3.5 rounded-xl border border-white/10 bg-zinc-900/30">
+                                <div class="text-xs md:text-sm font-bold text-white mb-1"><i class="fa-solid fa-shop text-amber-400 mr-1.5"></i> Economic Impact</div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 leading-relaxed font-light">
+                                    Empowers regional artisans, verified eateries, and local economies across Tier-2 and Tier-3 Indian cities with direct traveler traffic.
+                                </p>
+                            </div>
+                            <div class="p-3.5 rounded-xl border border-white/10 bg-zinc-900/30">
+                                <div class="text-xs md:text-sm font-bold text-white mb-1"><i class="fa-solid fa-lock text-sky-400 mr-1.5"></i> Privacy By Default</div>
+                                <p class="text-[11px] md:text-xs text-zinc-400 leading-relaxed font-light">
+                                    Strips user identifiers before calling external LLMs, ensuring strict DPDP Act compliance and end-to-end user data sovereignty.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="flex items-center justify-between px-4 md:px-8 py-3.5 md:py-4 border-t border-white/10 bg-zinc-900/60 backdrop-blur-xl">
+                    <span class="text-[8px] md:text-xs text-zinc-500 uppercase tracking-widest">
+                        Zinno4.0 / Smart &amp; Sustainable Cities
+                    </span>
+                    <button type="button" onclick="closeGhumifyModal()"
+                        class="px-4 md:px-6 py-1.5 md:py-2 rounded-full border border-white/20 bg-white/10 hover:bg-white text-zinc-200 hover:text-black text-xs md:text-sm font-semibold transition-all">
+                        Close Details
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
     <div class="fixed inset-0 pointer-events-none z-[60] opacity-[0.03]"
@@ -1272,6 +1968,28 @@
             });
         });
 
+        // Ghumify Project Detail Modal Controls
+        function openGhumifyModal() {
+            const modal = document.getElementById('ghumify-modal');
+            if (modal) {
+                modal.classList.add('modal-open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeGhumifyModal() {
+            const modal = document.getElementById('ghumify-modal');
+            if (modal) {
+                modal.classList.remove('modal-open');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeGhumifyModal();
+            }
+        });
 
         document.body.style.overflow = 'hidden';
     </script>
